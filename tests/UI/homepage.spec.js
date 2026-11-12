@@ -25,3 +25,26 @@ test.describe('Cheapflights - Logo Validation', () => {
   
 
 })
+
+test.describe('Cheapflights - Login Button Validation', () => {
+  /**
+   * @type {BasePage}
+   */
+  let basePage;
+
+  test.beforeEach(async ({ page }) => {
+    basePage = new BasePage(page);
+    await basePage.navigateToHomepage();
+  });
+
+
+  test('[TC-03] Verify login button is displayed', async ({ page }) => {
+    await expect(basePage.getLoginButton()).toBeVisible();
+  });
+
+  test('[TC-04] Verify login button is clickable', async ({ page }) => {
+    await expect(basePage.getLoginButton()).toBeEnabled();
+  });
+  
+
+})
