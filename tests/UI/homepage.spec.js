@@ -20,7 +20,7 @@ test.describe('Cheapflights - Logo Validation', () => {
   });
 
   test('[TC-02] Verify logo is displayed', async ({ page }) => {
-    await expect(basePage.getLogo()).toBe;
+    await expect(basePage.getLogo()).toBeVisible();
   });
   
 

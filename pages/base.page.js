@@ -2,7 +2,7 @@ class BasePage{
     constructor(page){
         this.page = page;
         this.BASE_URL = "https://www.cheapflights.com.au";
-
+        this.logo = this.page.getByRole('link', { name: 'Go to the cheapflights homepage' });
         this.loginButton = this.page.getByRole('button', { name: 'Sign in' });
     }
 
@@ -12,9 +12,7 @@ class BasePage{
     }
 
     getLogo(){
-        return this.page.getByRole('link', {
-            name: 'Go to the cheapflights homepage'
-        });
+        return this.logo;
     }
         
     getLoginButton(){
