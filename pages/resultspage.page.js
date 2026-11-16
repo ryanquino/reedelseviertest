@@ -5,7 +5,7 @@ class ResultsPage extends BasePage {
         super(page);
         this.page = page;
         this.cheapestSortButton = this.page.getByRole('button', { name: 'Cheapest' });
-        this.cheapestSortButton = this.page.getByRole('button', { name: 'Quickest' });
+        //this.quickestSortButton = this.page.getByRole('button', { name: 'Quickest' });
         this.priceList = this.page.locator('.e2GB-price-text');
         this.resultCards = this.page.locator('[aria-label^="Result item"]');
     }
@@ -18,16 +18,16 @@ class ResultsPage extends BasePage {
         await this.page.goto(this.buildSearchUrl(details));
     }
 
-    getResultCard(from, to) {
-        return this.resultCards.filter({has: this.page.locator(`input[aria-label*="${from}"][aria-label*="${to}"]`)});
+    // getResultCard() {
+    //     return this.resultCards.first() ;
+    // }
+
+    getFlightDetails() {
+        return this.resultCards.first().locator('li.hJSA-item');
     }
 
-    getFlightDetails(from, to) {
-        return this.getResultCard(from, to).locator('li.hJSA-item').filter({ has: this.page.locator(`input[aria-label*="${from}"][aria-label*="${to}"]`)});
-    }
-
-    getPriceSection(from, to) {
-        return this.getResultCard(from, to).locator('.nrc6-price-section');
+    getPriceSection() {
+        return this.resultCards.first().locator('.nrc6-price-section');
     }
 
     getFlightTime(flightRow) {
@@ -81,11 +81,11 @@ class ResultsPage extends BasePage {
         return prices.map(p => parseInt(p.replace(/[^0-9]/g, '')));
     }
 
-    async sortByCheapest() {
-        await this.quickestSortButton.click({ force: true });
-        await this.page.waitForSelector('[aria-label="Quickest"][aria-selected="true"]', { timeout: 7000 });
-        await this.page.waitForTimeout(3000);
-    }
+    // async sortByQuickest() {
+    //     await this.quickestSortButton.click({ force: true });
+    //     await this.page.waitForSelector('[aria-label="Quickest"][aria-selected="true"]', { timeout: 7000 });
+    //     await this.page.waitForTimeout(3000);
+    // }
 
     async getDurationList(){
         const prices = await this.priceList.getFlightDuration();

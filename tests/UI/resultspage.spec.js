@@ -26,14 +26,14 @@ test.describe('Cheapflights - Search Page Validation', () => {
     test('[TC-06] Verify flight details are displayed', async ({ page }) => {
         await resultsPage.navigeteToSearchResultsPage(resultsData);
         // DVO - MNL
-        const departureFlight = resultsPage.getFlightDetails(resultsData.from, resultsData.to);
+        const departureFlight = resultsPage.getFlightDetails();
         await expect(departureFlight.first()).toBeVisible({ timeout: 10000 });
         await expect(resultsPage.getFlightTime(departureFlight.first())).toBeVisible();
         await expect(resultsPage.getFlighttype(departureFlight.first())).toBeVisible();
         await expect(resultsPage.getFlightDuration(departureFlight.first())).toBeVisible();
         await expect(resultsPage.getAirlineLogo(departureFlight.first())).toBeVisible();
         // MNL - DVO
-        const returnFlight = resultsPage.getFlightDetails(resultsData.to, resultsData.from);
+        const returnFlight = resultsPage.getFlightDetails();
         await expect(returnFlight.first()).toBeVisible({ timeout: 10000 });
         await expect(resultsPage.getFlightTime(returnFlight.first())).toBeVisible();
         await expect(resultsPage.getFlighttype(returnFlight.first())).toBeVisible();
@@ -43,7 +43,7 @@ test.describe('Cheapflights - Search Page Validation', () => {
 
     test('[TC-07] Verify price section is displayed', async ({ page }) => {
         await resultsPage.navigeteToSearchResultsPage(resultsData);
-        const priceSection = resultsPage.getPriceSection(resultsData.from, resultsData.to);
+        const priceSection = resultsPage.getPriceSection();
         await expect(priceSection.first()).toBeVisible({ timeout: 10000 });
         await expect(resultsPage.getFlightPrice(priceSection.first())).toBeVisible();
         await expect(resultsPage.getFlightcabinClass(priceSection.first())).toBeVisible();
@@ -69,7 +69,7 @@ test.describe('Cheapflights - Search Page Validation', () => {
 
     test('[TC-09] Verify flight details element position', async ({ page }) => {
         await resultsPage.navigeteToSearchResultsPage(resultsData);
-        const departureFlight = resultsPage.getFlightDetails(resultsData.from, resultsData.to);
+        const departureFlight = resultsPage.getFlightDetails();
         const logoBox = await resultsPage.getAirlineLogo(departureFlight.first()).boundingBox();
         const timeBox = await resultsPage.getFlightTime(departureFlight.first()).boundingBox();
         const typeBox = await resultsPage.getFlighttype(departureFlight.first()).boundingBox();
@@ -85,7 +85,7 @@ test.describe('Cheapflights - Search Page Validation', () => {
 
     test('[TC-10] Verify price section elements position', async ({ page }) => {
         await resultsPage.navigeteToSearchResultsPage(resultsData);
-        const priceSection = resultsPage.getPriceSection(resultsData.from, resultsData.to);
+        const priceSection = resultsPage.getPriceSection();
         await expect(priceSection.first()).toBeVisible({ timeout: 10000 });
         const priceBox = await resultsPage.getFlightPrice(priceSection.first()).boundingBox();
         const cabinClassBox = await resultsPage.getFlightcabinClass(priceSection.first()).boundingBox();
