@@ -1,0 +1,53 @@
+{
+    "oneWayTrip" : {
+        "from" : "DVO",
+        "to" : "BNE",
+        "departureDate" : "2026-12-21",
+        "returnDate" : "2026-12-31",
+        "departureLocation" : "Brisbane Queensland, Australia",
+        "adults": 1,
+        "children": 0,
+        "childAge" : 5,
+        "infants": 0
+    },
+
+    "returnTrip" : {
+        "from" : "DVO",
+        "to" : "MNL",
+        "departureDate" : "2026-12-21",
+        "returnDate" : "2026-12-31",
+        "departureLocation" : "Manila, Philippines",
+        "adults": 1,
+        "children": 0,
+        "childAge" : 5,
+        "infants": 0
+    },
+
+     "multiCityTrip" : {
+        "from1" : "DVO",
+        "to1" : "CEB",
+        "from2" : "CEB",
+        "to2" : "MNL",
+        "from3" : "MNL",
+        "to3" : "PPS",
+        "from4" : "PPS",
+        "to4" : "CRK",
+        "departureDate1" : "2026-12-21",
+        "departureDate2" : "2026-12-22",
+        "departureDate3" : "2026-12-23",    
+        "departureDate4" : "2026-12-24", 
+        "returnDate1" : "2026-12-31",
+        "returnDate2" : "2026-12-31",
+        "returnDate3" : "2026-12-31",
+        "returnDate4" : "2026-12-31",
+        "departureLocation1" : "Cebu City, Cebu, Philippines",
+        "departureLocation2" : "Manila, Philippines",
+        "departureLocation3" : "Puerto Princesa, Palawan, Philippines",
+        "departureLocation4" : "Angeles City, Philippines",
+        "adults": 1,
+        "children": 0,
+        "childAge" : 5,
+        "infants": 0
+    }
+    
+}

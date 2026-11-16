@@ -1,0 +1,11 @@
+{
+    "firstname": "Reed",
+    "lastname": "Elsevier",
+    "totalprice": 100,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2026-12-01",
+        "checkout": "2026-12-07"
+    },
+    "additionalneeds": "Extra bed"
+}

@@ -1,0 +1,11 @@
+{
+    "from" : "DVO",
+    "to" : "MNL",
+    "departureDate" : "2026-12-21",
+    "returnDate" : "2026-12-31",
+    "departureLocation" : "Manila, Philippines",
+    "adults": 2,
+    "children": 1,
+    "childAge" : 5,
+    "infants": 1
+}
